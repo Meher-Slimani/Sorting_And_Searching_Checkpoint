@@ -1,0 +1,14 @@
+PROCEDURE insertion_Sort(arr : ARRAY_OF INTEGER)
+VAR
+    i, j, key : INTEGER;
+BEGIN
+    FOR i FROM 1 TO arr.length - 1 STEP 1  DO
+        key := arr[i];
+        j := i - 1;
+        WHILE (j >= 0 && key < arr[j]) DO
+        arr[j+1] := arr[j];
+        j--;
+        END_WHILE
+        arr[j+1] := key;
+    END_FOR
+END
